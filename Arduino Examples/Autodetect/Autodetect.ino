@@ -1,7 +1,7 @@
 
 #define ESP32       // comment out if using Arduino
 
-//#define _DEBUG  // uncomment to get additional debug output
+#define _DEBUG  // uncomment to get additional debug output
 #ifdef _DEBUG
   #define OUTC(code) {code}
   #define OUT(s)  {Serial.print(s);}
@@ -24,6 +24,7 @@
   const int pinRX = 39, pinTX = 37;   // Wemos S2 Mini
   //const int pinRX = 16, pinTX = 17;    Wemos Lolin32
   #define oSerialHover Serial1    // ESP32
+  #define LED_BUILTIN 2
 #else
   #include <SoftwareSerial.h>    
   const int pinRX = 9, pinTX = 8;
@@ -40,7 +41,7 @@ void setup()
   #ifdef ESP32
     oSerialHover.begin(BAUDRATE, SERIAL_8N1, pinRX,pinTX);
   #else
-    oSerialHover.begin(iBaud);
+    oSerialHover.begin(BAUDRATE);
   #endif
 }
 
@@ -65,7 +66,7 @@ void loop()
   if (Serial.available())  // If anything comes in Serial (USB),
   {      
     char c = Serial.read();
-    //Serial.println(c );
+    Serial.println(c );
     oSerialHover.write(c);   // read it and send it to hoverboard
   }
 

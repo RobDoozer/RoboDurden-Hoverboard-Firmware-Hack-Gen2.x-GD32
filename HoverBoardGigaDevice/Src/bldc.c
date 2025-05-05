@@ -1,7 +1,7 @@
 
 #include "../Inc/defines.h"
 #include <stdio.h>
-
+#include "../Inc/bldc.h"
 
 // Internal constants
 const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2250

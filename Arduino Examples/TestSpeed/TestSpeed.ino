@@ -6,7 +6,7 @@
 #define _DEBUG      // debug output to first hardware serial port
 //#define DEBUG_RX    // additional hoverboard-rx debug output
 
-#define ESP32       // comment out if using Arduino
+//#define ESP32       // comment out if using Arduino
 
 // #define HOVERBOARD_MM32  // uncomment if a MM32 Hoverboard firmware is connected (and no GD32 or STM32)
 

@@ -49,4 +49,7 @@ void SetPWM(int16_t setPwm);
 //----------------------------------------------------------------------------
 void CalculateBLDC(void);
 
+
+void blockPWM(int pwm, int pwmPos, int *y, int *b, int *g);
+
 #endif
